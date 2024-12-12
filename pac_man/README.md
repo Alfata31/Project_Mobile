@@ -1,6 +1,6 @@
 # 📜 **Deskripsi Fungsi dan Analisis Kode Permainan PACMAN Flutter** 🎮
 
-Deskripsi dari setiap bagian kode proyek PACMAN yang dikembangkan menggunakan **Flutter**.
+Deskripsi dari setiap bagian kode proyek PACMAN yang dikembangkan menggunakan *Flutter*.
 ---
 
 ## 🧱 **1. Widget MyBarrier**
