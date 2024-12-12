@@ -65,6 +65,6 @@ flutter doctor
 Untuk pertanyaan lebih lanjut, silakan hubungi:  
 - ✨ **Muhammad Alfata** – [Muhammadalfataaa@gmail.com]
 - 🚀 **Muhammad Rasyid Wanandi** – [Mrasyidwanandi@gmail.com]  
-- 🛠️ **Aro Fakhrur Riziq** – [email@gmail.com]
+- 🛠️ **Aro Fakhrur Riziq** – [Arofr.official@gmail.com]
 - 💻 **Irma Yastari** – [irmayastari@gmail.com]
 - 🌟 **Raisa Hafizah** – [sayaraisahafizah@gmail.com] 
