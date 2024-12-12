@@ -1,86 +1,78 @@
-# Kelompok 2 - PACMAN
+Berikut adalah *README.md* dengan tambahan emotikon yang menarik:
 
-## Anggota Kelompok
-1. Muhammad Alfata  
-2. Muhammad Rasyid Wanandi  
-3. Aro Fakhrur Riziq  
-4. Irma Yastari  
-5. Raisa Hafizah
+---
 
-## Deskripsi Proyek
-[Berikan deskripsi singkat tentang proyek yang dikerjakan, tujuannya, serta manfaatnya. Misalnya:  
-"Proyek ini bertujuan untuk membuat aplikasi manajemen tugas yang membantu pengguna mengatur pekerjaan sehari-hari dengan lebih efisien."]
+# 🎮 Kelompok 2 - PACMAN 👾
 
-## Fitur Utama
-- Fitur 1: [Deskripsi singkat fitur]  
-- Fitur 2: [Deskripsi singkat fitur]  
-- Fitur 3: [Deskripsi singkat fitur]  
+## 👥 Anggota Kelompok
+1. **Muhammad Alfata** ✨  
+2. **Muhammad Rasyid Wanandi** 🚀  
+3. **Aro Fakhrur Riziq** 🛠️  
+4. **Irma Yastari** 💻  
+5. **Raisa Hafizah** 🌟  
 
-## Teknologi yang Digunakan
-- [Teknologi 1]  
-- [Teknologi 2]  
-- [Teknologi 3]  
+## 📝 Deskripsi Proyek
+Proyek ini bertujuan untuk membuat permainan **PACMAN** sederhana menggunakan **Flutter**, yang memungkinkan pengguna untuk mengendalikan karakter utama dan mengumpulkan poin sambil menghindari rintangan. 🟡👻
 
-Cara Menjalankan Proyek Flutter
-Prasyarat
-Pastikan perangkat Anda telah memiliki:
+## 🛠️ Teknologi yang Digunakan
+- 🐦 **Flutter**  
+- 🎯 **Dart**  
+- 🖥️ **Android Studio**  
 
-Flutter SDK - Petunjuk Instalasi Flutter
-Dart SDK (biasanya sudah termasuk dalam instalasi Flutter)
-Android Studio atau Visual Studio Code dengan plugin Flutter dan Dart
-Android Emulator atau perangkat fisik untuk pengujian
-Langkah-langkah Menjalankan Proyek
-Clone repositori:
-Buka terminal atau command prompt dan jalankan perintah berikut:
+## 🚀 Cara Menjalankan Proyek Flutter
 
-bash
-Copy code
-git clone https://github.com/username/repo-name.git
-Masuk ke direktori proyek:
+### ✅ Prasyarat
+Pastikan perangkat Anda telah memiliki:  
+1. 🛠️ **Flutter SDK** – [Petunjuk Instalasi Flutter](https://flutter.dev/docs/get-started/install)  
+2. 🎯 **Dart SDK** (biasanya sudah termasuk dalam instalasi Flutter)  
+3. 🖥️ **Android Studio** atau **Visual Studio Code** dengan plugin Flutter dan Dart  
+4. 📱 **Android Emulator** atau perangkat fisik untuk pengujian  
 
-bash
-Copy code
-cd repo-name
-Install dependensi:
-Jalankan perintah berikut untuk menginstal semua dependensi yang dibutuhkan:
+### 📝 Langkah-langkah Menjalankan Proyek
 
-bash
-Copy code
-flutter pub get
-Jalankan aplikasi:
+1. **Clone repositori**:  
+   Buka terminal atau command prompt dan jalankan perintah berikut:  
+   ```bash
+   git clone https://github.com/username/repo-name.git
+   ```
 
-Untuk menjalankan di emulator atau perangkat Android:
-bash
-Copy code
-flutter run
-Untuk menjalankan di perangkat iOS (khusus macOS):
-bash
-Copy code
-flutter run -d ios
-Build APK (opsional):
-Jika Anda ingin membangun APK untuk distribusi, jalankan perintah berikut:
+2. **Masuk ke direktori proyek**:  
+   ```bash
+   cd repo-name
+   ```
 
-bash
-Copy code
-flutter build apk --release
-Build iOS (opsional):
-Untuk membangun aplikasi iOS, jalankan perintah berikut (khusus macOS):
+3. **Install dependensi**:  
+   Jalankan perintah berikut untuk menginstal semua dependensi yang dibutuhkan:  
+   ```bash
+   flutter pub get
+   ```
 
-bash
-Copy code
-flutter build ios --release
-Troubleshooting
-Jika terjadi masalah saat menjalankan proyek, gunakan perintah berikut untuk memeriksa lingkungan Flutter Anda:
+4. **Jalankan aplikasi**:  
+   Untuk menjalankan di emulator atau perangkat Android:  
+   ```bash
+   flutter run
+   ```
 
-bash
-Copy code
+5. **Build APK (opsional)**:  
+   Jika Anda ingin membangun APK untuk distribusi, jalankan perintah berikut:  
+   ```bash
+   flutter build apk --release
+   ```
+
+### 🛠️ Troubleshooting
+Jika terjadi masalah saat menjalankan proyek, gunakan perintah berikut untuk memeriksa lingkungan Flutter Anda:  
+```bash
 flutter doctor
+```
 
-## Kontak
+## 📧 Kontak
 Untuk pertanyaan lebih lanjut, silakan hubungi:  
-- Muhammad Alfata – [email@example.com]  
-- Muhammad Rasyid Wanandi – [email@example.com]  
-- Aro Fakhrur Riziq – [email@example.com]  
-- Irma Yastari – [email@example.com]  
-- Raisa Hafizah – [email@example.com]  
+- ✨ **Muhammad Alfata** – [email@gmail.com]  
+- 🚀 **Muhammad Rasyid Wanandi** – [Arofr.official@gmail.com]  
+- 🛠️ **Aro Fakhrur Riziq** – [email@gmail.com]  
+- 💻 **Irma Yastari** – [email@gmail.com]  
+- 🌟 **Raisa Hafizah** – [email@gmail.com]  
 
+--- 
+
+Emotikon ini menambah kesan kreatif dan menarik untuk *README.md* proyek Anda! 🎉
