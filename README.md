@@ -1,8 +1,7 @@
-
-Kelompok 2 
-
-Muhammad Alfata,
-Muhammad rasyid wanandi,
-Aro fakhrur riziq,
-Irma yastari,
+Kelompok 2 - Proyek [PAC MAN :v]
+Anggota Kelompok
+Muhammad Alfata
+Muhammad Rasyid Wanandi
+Aro Fakhrur Riziq
+Irma Yastari
 Raisa Hafizah
