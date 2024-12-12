@@ -1,5 +1,4 @@
 Kelompok 2 
-Nama kelompok pac-man
 
 Muhammad Alfata
 Muhammad rasyid wanandi
