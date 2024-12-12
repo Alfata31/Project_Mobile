@@ -10,7 +10,7 @@ class Ghost extends StatelessWidget {
     return Padding(
       // Padding seragam sebesar 4 piksel di semua sisi.
       padding: const EdgeInsets.all(4.0),
-      // Menampilkan gambar dari direktori aset lokal proyek.
+      // Menampilkan gambar dari direktori aset lokal project.
       child: Image.asset('lib/images/ghost.png'),
     );
   }
