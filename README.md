@@ -1,7 +1,3 @@
-Berikut adalah *README.md* dengan tambahan emotikon yang menarik:
-
----
-
 # 🎮 Kelompok 2 - PACMAN 👾
 
 ## 👥 Anggota Kelompok
@@ -72,7 +68,3 @@ Untuk pertanyaan lebih lanjut, silakan hubungi:
 - 🛠️ **Aro Fakhrur Riziq** – [email@gmail.com]  
 - 💻 **Irma Yastari** – [email@gmail.com]  
 - 🌟 **Raisa Hafizah** – [email@gmail.com]  
-
---- 
-
-Emotikon ini menambah kesan kreatif dan menarik untuk *README.md* proyek Anda! 🎉
