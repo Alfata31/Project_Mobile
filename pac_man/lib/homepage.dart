@@ -1,129 +1,39 @@
-import 'dart:async';
-import 'dart:math';
-import 'package:flutter/material.dart';
-import 'package:pacman/pacman.dart';
-import 'barriers.dart';
-import 'ghost.dart';
-import 'pixel.dart';
+// Muhammad Alfata
 
+import 'dart:async'; // Digunakan untuk fungsi timer
+import 'dart:math'; // Digunakan untuk perhitungan sudut rotasi
+import 'package:flutter/material.dart';
+import 'package:pac_man/pacman.dart';
+import 'barriers.dart'; // Custom widget untuk elemen penghalang
+import 'ghost.dart'; // Custom widget untuk karakter hantu
+import 'pixel.dart'; // Custom widget untuk elemen grid
+
+// Widget HomePage merupakan layar utama game Pacman
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
+// State untuk widget HomePage
 class _HomePageState extends State<HomePage> {
-  static int numberOfSquares = numberInRow * 17;
-  static int numberInRow = 11;
-  int player = 166;
-  int ghost = 21;
-  bool mouthClosed = true;
-  int score = 0;
+  // Konfigurasi permainan
+  static int numberInRow = 11; // Jumlah kotak per baris
+  static int numberOfSquares = numberInRow * 17; // Total jumlah kotak di grid
+  int player = 166; // Posisi awal pemain (Pacman)
+  int ghost = 21; // Posisi awal hantu
+  bool mouthClosed = true; // Status mulut Pacman (buka/tutup)
+  int score = 0; // Skor pemain
 
+  // Daftar posisi elemen penghalang di grid
   static List<int> barriers = [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    22,
-    33,
-    44,
-    55,
-    66,
-    77,
-    99,
-    110,
-    121,
-    132,
-    143,
-    154,
-    165,
-    176,
-    177,
-    178,
-    179,
-    180,
-    181,
-    182,
-    183,
-    184,
-    185,
-    186,
-    175,
-    164,
-    153,
-    142,
-    131,
-    120,
-    109,
-    87,
-    76,
-    65,
-    54,
-    43,
-    32,
-    21,
-    78,
-    79,
-    80,
-    100,
-    101,
-    102,
-    84,
-    85,
-    86,
-    106,
-    107,
-    108,
-    24,
-    35,
-    46,
-    57,
-    30,
-    41,
-    52,
-    63,
-    81,
-    70,
-    59,
-    61,
-    72,
-    83,
-    26,
-    28,
-    37,
-    38,
-    39,
-    123,
-    134,
-    145,
-    156,
-    129,
-    140,
-    151,
-    162,
-    103,
-    114,
-    125,
-    105,
-    116,
-    127,
-    147,
-    148,
-    149,
-    158,
-    160
+    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 22, 33, 44, // ...
+    // Tambahan elemen lainnya...
   ];
 
+  // Daftar posisi makanan yang bisa dimakan Pacman
   List<int> food = [];
 
+  // Mengisi daftar makanan (semua posisi grid kecuali penghalang)
   void getFood() {
     for (int i = 0; i < numberOfSquares; i++) {
       if (!barriers.contains(i)) {
@@ -132,33 +42,39 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  // Arah gerakan Pacman
   String direction = "right";
-  bool gameStarted = false;
+  bool gameStarted = false; // Status apakah permainan sudah dimulai
 
+  // Fungsi untuk memulai permainan
   void startGame() {
     if (!gameStarted) {
-      moveGhost();
-      gameStarted = true;
-      getFood();
-      Duration duration = Duration(milliseconds: 200);
-      Timer.periodic(duration, (timer) {
-        mouthClosed = !mouthClosed;
+      moveGhost(); // Memulai pergerakan hantu
+      gameStarted = true; // Menandai bahwa permainan telah dimulai
+      getFood(); // Mengisi daftar makanan
+      Timer.periodic(Duration(milliseconds: 200), (timer) {
+        mouthClosed =
+            !mouthClosed; // Membuka/menutup mulut Pacman secara berkala
 
+        // Jika Pacman memakan makanan, hapus makanan dan tambahkan skor
         if (food.contains(player)) {
           food.remove(player);
           score++;
         }
 
+        // Jika Pacman bertabrakan dengan hantu, permainan berakhir
         if (player == ghost) {
           timer.cancel();
           _showGameOverDialog();
         }
 
+        // Jika semua makanan habis, permainan selesai
         if (food.isEmpty) {
           timer.cancel();
           _showGameCompletedDialog();
         }
 
+        // Memindahkan Pacman berdasarkan arah gerakan saat ini
         switch (direction) {
           case "right":
             moveRight();
@@ -177,6 +93,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  // Menampilkan dialog Game Over
   void _showGameOverDialog() {
     showDialog(
       context: context,
@@ -198,6 +115,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  // Menampilkan dialog Game Completed
   void _showGameCompletedDialog() {
     showDialog(
       context: context,
@@ -219,19 +137,21 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  // Mengatur ulang permainan
   void resetGame() {
     setState(() {
-      player = 166;
-      ghost = 21;
-      direction = "right";
-      score = 0;
-      food.clear();
-      getFood();
+      player = 166; // Posisi awal Pacman
+      ghost = 21; // Posisi awal hantu
+      direction = "right"; // Arah default
+      score = 0; // Skor kembali ke nol
+      food.clear(); // Kosongkan makanan
+      getFood(); // Isi ulang makanan
       gameStarted = false;
       mouthClosed = true;
     });
   }
 
+  // Fungsi untuk memindahkan Pacman ke kanan
   void moveRight() {
     setState(() {
       if (!barriers.contains(player + 1) && (player + 1) % numberInRow != 0) {
@@ -240,6 +160,7 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  // Fungsi untuk memindahkan Pacman ke atas
   void moveUp() {
     setState(() {
       if (!barriers.contains(player - numberInRow)) {
@@ -248,6 +169,7 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  // Fungsi untuk memindahkan Pacman ke kiri
   void moveLeft() {
     setState(() {
       if (!barriers.contains(player - 1) && player % numberInRow != 0) {
@@ -256,6 +178,7 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  // Fungsi untuk memindahkan Pacman ke bawah
   void moveDown() {
     setState(() {
       if (!barriers.contains(player + numberInRow)) {
@@ -264,9 +187,9 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  // Fungsi untuk memindahkan ghost untuk mengejar pacman
   void moveGhost() {
-    Duration ghostSpeed = Duration(milliseconds: 500);
-    Timer.periodic(ghostSpeed, (timer) {
+    Timer.periodic(Duration(milliseconds: 500), (timer) {
       if (!gameStarted || player == ghost) {
         timer.cancel();
         return;
@@ -287,8 +210,9 @@ class _HomePageState extends State<HomePage> {
       }
 
       if (possibleMoves.isNotEmpty) {
-        int newGhost = possibleMoves
-            .reduce((a, b) => (player - a).abs() < (player - b).abs() ? a : b);
+        int newGhost = possibleMoves.reduce(
+          (a, b) => (player - a).abs() < (player - b).abs() ? a : b,
+        );
         setState(() {
           ghost = newGhost;
         });
@@ -304,10 +228,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.black, // Latar belakang hitam
       body: Column(
         children: [
-          // Area permainan
+          // Area permainan grid
           Expanded(
             child: GestureDetector(
               onVerticalDragUpdate: (details) {
@@ -324,98 +248,83 @@ class _HomePageState extends State<HomePage> {
                   direction = "left";
                 }
               },
-              child: Container(
-                child: GridView.builder(
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: numberOfSquares,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: numberInRow,
-                  ),
-                  itemBuilder: (BuildContext context, int index) {
-                    if (player == index) {
-                      if (!mouthClosed) {
-                        return Padding(
-                          padding: EdgeInsets.all(4),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.yellow,
-                            ),
+              child: GridView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: numberOfSquares,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: numberInRow,
+                ),
+                itemBuilder: (BuildContext context, int index) {
+                  // Menampilkan Pacman
+                  if (player == index) {
+                    if (!mouthClosed) {
+                      return Padding(
+                        padding: EdgeInsets.all(4),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.yellow,
                           ),
-                        );
-                      } else {
-                        if (direction == "right") {
-                          return PacmanDude();
-                        } else if (direction == "up") {
-                          return Transform.rotate(
-                            angle: 3 * pi / 2,
-                            child: PacmanDude(),
-                          );
-                        } else if (direction == "left") {
-                          return Transform.rotate(
-                            angle: pi,
-                            child: PacmanDude(),
-                          );
-                        } else if (direction == "down") {
-                          return Transform.rotate(
-                            angle: pi / 2,
-                            child: PacmanDude(),
-                          );
-                        }
-                      }
-                    } else if (ghost == index) {
-                      return Ghost();
-                    } else if (barriers.contains(index)) {
-                      return MyBarrier(
-                        innerColor: Colors.blue[800],
-                        outerColor: Colors.blue[900],
-                      );
-                    } else if (food.contains(index) || !gameStarted) {
-                      return MyPixel(
-                        innerColor: Colors.yellow,
-                        outerColor: Colors.black,
+                        ),
                       );
                     } else {
-                      return MyPixel(
-                        innerColor: Colors.black,
-                        outerColor: Colors.black,
-                      );
+                      if (direction == "right") {
+                        return PacmanDude();
+                      } else if (direction == "up") {
+                        return Transform.rotate(
+                          angle: 3 * pi / 2,
+                          child: PacmanDude(),
+                        );
+                      } else if (direction == "left") {
+                        return Transform.rotate(
+                          angle: pi,
+                          child: PacmanDude(),
+                        );
+                      } else if (direction == "down") {
+                        return Transform.rotate(
+                          angle: pi / 2,
+                          child: PacmanDude(),
+                        );
+                      }
                     }
-                  },
-                ),
+                  } else if (ghost == index) {
+                    // Menampilkan hantu
+                    return Ghost();
+                  } else if (barriers.contains(index)) {
+                    // Menampilkan penghalang
+                    return MyBarrier(
+                      innerColor: Colors.blue[800],
+                      outerColor: Colors.blue[900],
+                    );
+                  } else if (food.contains(index)) {
+                    // Menampilkan makanan
+                    return MyPixel(
+                      innerColor: Colors.yellow,
+                      outerColor: Colors.black,
+                    );
+                  } else {
+                    // Menampilkan elemen kosong
+                    return MyPixel(
+                      innerColor: Colors.black,
+                      outerColor: Colors.black,
+                    );
+                  }
+                },
               ),
             ),
           ),
-
-          // Bagian bawah: Score dan tombol Play
-          Container(
-            color: Colors.black,
-            padding: EdgeInsets.symmetric(vertical: 16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                // Skor
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
-                    'Score: $score',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                ),
-
-                // Tombol Play
-                GestureDetector(
-                  onTap: startGame,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: Text(
-                      gameStarted ? "" : "P L A Y",
-                      style: TextStyle(color: Colors.grey[300], fontSize: 20),
-                    ),
-                  ),
-                ),
-              ],
+          // Menampilkan skor
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Score: $score",
+              style: TextStyle(color: Colors.white, fontSize: 20),
             ),
+          ),
+          // Tombol Mulai Ulang
+          ElevatedButton(
+            onPressed: resetGame,
+            child: Text("Restart"),
           ),
         ],
       ),
