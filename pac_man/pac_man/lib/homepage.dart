@@ -17,8 +17,8 @@ class HomePage extends StatefulWidget {
 // State untuk widget HomePage
 class _HomePageState extends State<HomePage> {
   // Konfigurasi permainan
-  static int numberOfSquares = numberInRow * 17; // Total jumlah kotak di grid
   static int numberInRow = 11; // Jumlah kotak per baris
+  static int numberOfSquares = numberInRow * 17; // Total jumlah kotak di grid
   int player = 166; // Posisi awal pemain (Pacman)
   int ghost = 21; // Posisi awal hantu
   bool mouthClosed = true; // Status mulut Pacman (buka/tutup)
@@ -187,7 +187,7 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  // Fungsi untuk memindahkan hantu secara acak
+  // Fungsi untuk memindahkan ghost untuk mengejar pacman
   void moveGhost() {
     Timer.periodic(Duration(milliseconds: 500), (timer) {
       if (!gameStarted || player == ghost) {
