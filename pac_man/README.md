@@ -1,78 +1,7 @@
+### 📜 **Deskripsi Fungsi dan Analisis Kode Permainan PACMAN Flutter** 🎮
 
-# 🎮 Kelompok 2 - PACMAN 👾
+Berikut adalah deskripsi dari setiap bagian kode proyek PACMAN yang dikembangkan menggunakan **Flutter**. Penjelasan ini disusun dengan cara yang lebih interaktif dan terstruktur untuk memudahkan pemahaman.
 
-## 👥 Anggota Kelompok
-1. **Muhammad Alfata** ✨  
-2. **Muhammad Rasyid Wanandi** 🚀  
-3. **Aro Fakhrur Riziq** 🛠️  
-4. **Irma Yastari** 💻  
-5. **Raisa Hafizah** 🌟  
-
-## 📝 Deskripsi Proyek
-Proyek ini bertujuan untuk membuat permainan **PACMAN** sederhana menggunakan **Flutter**, yang memungkinkan pengguna untuk mengendalikan karakter utama dan mengumpulkan poin sambil menghindari rintangan. 🟡👻
-
-## 🛠️ Teknologi yang Digunakan
-- 🐦 **Flutter**  
-- 🎯 **Dart**  
-- 🖥️ **Android Studio**  
-
-## 🚀 Cara Menjalankan Proyek Flutter
-
-### ✅ Prasyarat
-Pastikan perangkat Anda telah memiliki:  
-1. 🛠️ **Flutter SDK** – [Petunjuk Instalasi Flutter](https://flutter.dev/docs/get-started/install)  
-2. 🎯 **Dart SDK** (biasanya sudah termasuk dalam instalasi Flutter)  
-3. 🖥️ **Android Studio** atau **Visual Studio Code** dengan plugin Flutter dan Dart  
-4. 📱 **Android Emulator** atau perangkat fisik untuk pengujian  
-
-### 📝 Langkah-langkah Menjalankan Proyek
-
-1. **Clone repositori**:  
-   Buka terminal atau command prompt dan jalankan perintah berikut:  
-   ```bash
-   git clone https://github.com/username/repo-name.git
-   ```
-
-2. **Masuk ke direktori proyek**:  
-   ```bash
-   cd repo-name
-   ```
-
-3. **Install dependensi**:  
-   Jalankan perintah berikut untuk menginstal semua dependensi yang dibutuhkan:  
-   ```bash
-   flutter pub get
-   ```
-
-4. **Jalankan aplikasi**:  
-   Untuk menjalankan di emulator atau perangkat Android:  
-   ```bash
-   flutter run
-   ```
-
-5. **Build APK (opsional)**:  
-   Jika Anda ingin membangun APK untuk distribusi, jalankan perintah berikut:  
-   ```bash
-   flutter build apk --release
-   ```
-
-### 🛠️ Troubleshooting
-Jika terjadi masalah saat menjalankan proyek, gunakan perintah berikut untuk memeriksa lingkungan Flutter Anda:  
-```bash
-flutter doctor
-```
-
-## 📧 Kontak
-Untuk pertanyaan lebih lanjut, silakan hubungi:  
-- ✨ **Muhammad Alfata**         – [Muhammadalfataaa@gmail.com]
-- 🚀 **Muhammad Rasyid Wanandi** – [Mrasyidwanandi@gmail.com]  
-- 🛠️ **Aro Fakhrur Riziq**       – [Arofr.official@gmail.com]
-- 💻 **Irma Yastari**            – [irmayastari@gmail.com]
-- 🌟 **Raisa Hafizah**           – [sayaraisahafizah@gmail.com] 
-=======
-# 📜 **Deskripsi Fungsi dan Analisis Kode Permainan PACMAN Flutter** 🎮
-
-Deskripsi dari setiap bagian kode proyek PACMAN yang dikembangkan menggunakan *Flutter*.
 ---
 
 ## 🧱 **1. Widget MyBarrier**
@@ -188,4 +117,3 @@ Menjadi karakter utama yang dikendalikan oleh pemain untuk mengumpulkan poin dan
 Permainan PACMAN ini menggunakan komponen-komponen utama seperti **MyBarrier**, **Ghost**, **MyPixel**, dan **PacmanDude** untuk menciptakan pengalaman bermain yang interaktif. **HomePage** menangani semua logika permainan, termasuk pergerakan, skor, dan kondisi menang/kalah.
 
 Setiap bagian memiliki peran spesifik untuk memastikan permainan berjalan lancar, menarik, dan responsif! 🚀👾
-
